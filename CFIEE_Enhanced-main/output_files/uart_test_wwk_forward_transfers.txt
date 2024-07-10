@@ -1,0 +1,145 @@
+trans_num: 34
+
+<__start>:
+
+j/b_instr: 24:	00028b63          	beqz	t0,3a <L_loop0_done>
+t_instr:   3a:	20001197          	auipc	gp,0x20001
+
+
+<L_loop0>:
+
+j/b_instr: 36:	fe0299e3          	bnez	t0,28 <L_loop0>
+t_instr:   28:	0001a303          	lw	t1,0(gp)
+
+
+<L_loop0_done>:
+
+j/b_instr: 50:	00020863          	beqz	tp,60 <L_loop1_done>
+t_instr:   60:	00000197          	auipc	gp,0x0
+
+
+<L_loop1>:
+
+j/b_instr: 5c:	fe021ce3          	bnez	tp,54 <L_loop1>
+t_instr:   54:	0051a023          	sw	t0,0(gp)
+
+
+<L_loop1_done>:
+
+
+<__to_main>:
+
+j/b_instr: e0:	313010ef          	jal	ra,1bf2 <main>
+t_instr:   1bf2:	6795                	lui	a5,0x5
+
+
+<puts>:
+
+j/b_instr: 186c:	c519                	beqz	a0,187a <puts+0x1a>
+t_instr:   187a:	55fd                	li	a1,-1
+
+j/b_instr: 1872:	2e8d                	jal	1be4 <fputc>
+t_instr:   1be4:	0ff57593          	andi	a1,a0,255
+
+j/b_instr: 1878:	f97d                	bnez	a0,186e <puts+0xe>
+t_instr:   186e:	55fd                	li	a1,-1
+
+j/b_instr: 187e:	269d                	jal	1be4 <fputc>
+t_instr:   1be4:	0ff57593          	andi	a1,a0,255
+
+
+<ck_uart_set_parity>:
+
+j/b_instr: 19d0:	04f58363          	beq	a1,a5,1a16 <ck_uart_set_parity+0x4a>
+t_instr:   1a16:	4158                	lw	a4,4(a0)
+
+j/b_instr: 19d6:	00f58d63          	beq	a1,a5,19f0 <ck_uart_set_parity+0x24>
+t_instr:   19f0:	4158                	lw	a4,4(a0)
+
+j/b_instr: 19da:	00058363          	beqz	a1,19e0 <ck_uart_set_parity+0x14>
+t_instr:   19e0:	4158                	lw	a4,4(a0)
+
+
+<ck_uart_set_wordsize>:
+
+j/b_instr: 1a3c:	04f58d63          	beq	a1,a5,1a96 <ck_uart_set_wordsize+0x5e>
+t_instr:   1a96:	4158                	lw	a4,4(a0)
+
+j/b_instr: 1a40:	02b7e563          	bltu	a5,a1,1a6a <ck_uart_set_wordsize+0x32>
+t_instr:   1a6a:	478d                	li	a5,3
+
+j/b_instr: 1a44:	04058163          	beqz	a1,1a86 <ck_uart_set_wordsize+0x4e>
+t_instr:   1a86:	4158                	lw	a4,4(a0)
+
+j/b_instr: 1a6c:	00f59c63          	bne	a1,a5,1a84 <ck_uart_set_wordsize+0x4c>
+t_instr:   1a84:	8082                	ret
+
+
+<ck_uart_open>:
+
+j/b_instr: 1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+t_instr:   1b00:	4505                	li	a0,1
+
+
+<ck_uart_init>:
+
+j/b_instr: 1b0a:	0af70163          	beq	a4,a5,1bac <ck_uart_init+0xa8>
+t_instr:   1bac:	4505                	li	a0,1
+
+j/b_instr: 1b60:	35b5                	jal	19cc <ck_uart_set_parity>
+t_instr:   19cc:	c54c                	sw	a1,12(a0)
+
+j/b_instr: 1b66:	3dc9                	jal	1a38 <ck_uart_set_wordsize>
+t_instr:   1a38:	c94c                	sw	a1,20(a0)
+
+j/b_instr: 1b6c:	cb85                	beqz	a5,1b9c <ck_uart_init+0x98>
+t_instr:   1b9c:	4058                	lw	a4,4(s0)
+
+j/b_instr: 1b70:	00e78c63          	beq	a5,a4,1b88 <ck_uart_init+0x84>
+t_instr:   1b88:	4058                	lw	a4,4(s0)
+
+j/b_instr: 1b9a:	bfe9                	j	1b74 <ck_uart_init+0x70>
+t_instr:   1b74:	4898                	lw	a4,16(s1)
+
+j/b_instr: 1baa:	b7e9                	j	1b74 <ck_uart_init+0x70>
+t_instr:   1b74:	4898                	lw	a4,16(s1)
+
+
+<ck_uart_putc>:
+
+j/b_instr: 1bc4:	cb99                	beqz	a5,1bda <ck_uart_putc+0x18>
+t_instr:   1bda:	4505                	li	a0,1
+
+j/b_instr: 1bd0:	dfe5                	beqz	a5,1bc8 <ck_uart_putc+0x6>
+t_instr:   1bc8:	01474783          	lbu	a5,20(a4)
+
+
+<fputc>:
+
+j/b_instr: 1bf0:	bfc9                	j	1bc2 <ck_uart_putc>
+t_instr:   1bc2:	4d5c                	lw	a5,28(a0)
+
+
+<main>:
+
+j/b_instr: 1c1a:	3dd9                	jal	1af0 <ck_uart_open>
+t_instr:   1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+
+j/b_instr: 1c22:	35cd                	jal	1b04 <ck_uart_init>
+t_instr:   1b04:	4118                	lw	a4,0(a0)
+
+j/b_instr: 1c2a:	391d                	jal	1860 <puts>
+t_instr:   1860:	1141                	addi	sp,sp,-16
+
+j/b_instr: 1c40:	3749                	jal	1bc2 <ck_uart_putc>
+t_instr:   1bc2:	4d5c                	lw	a5,28(a0)
+
+j/b_instr: 1c42:	ff2419e3          	bne	s0,s2,1c34 <main+0x42>
+t_instr:   1c34:	85a2                	mv	a1,s0
+
+j/b_instr: 1c4c:	3911                	jal	1860 <puts>
+t_instr:   1860:	1141                	addi	sp,sp,-16
+
+j/b_instr: 1c4e:	a001                	j	1c4e <main+0x5c>
+t_instr:   1c4e:	a001                	j	1c4e <main+0x5c>
+

@@ -1,0 +1,1238 @@
+Basic_block Name: 0
+In Function:      <__start>
+Start address:    0
+End address:      24
+Start instruction: 
+	0:	200c0117          	auipc	sp,0x200c0
+End instruction: 
+	24:	00028b63          	beqz	t0,3a <L_loop0_done>
+Length:           10
+Taken_Target address:       3a
+Taken_Target instruction: 
+	3a:	20001197          	auipc	gp,0x20001
+Not_Taken_Target address:   28
+Not_Taken_Target instruction: 
+	28:	0001a303          	lw	t1,0(gp)
+Instruction: 
+	0:	200c0117          	auipc	sp,0x200c0
+	4:	ff810113          	addi	sp,sp,-8 # 200bfff8 <__kernel_stack>
+	8:	00005197          	auipc	gp,0x5
+	c:	5c418193          	addi	gp,gp,1476 # 55cc <__erodata>
+	10:	20000217          	auipc	tp,0x20000
+	14:	ff020213          	addi	tp,tp,-16 # 20000000 <__data_start__>
+	18:	20001297          	auipc	t0,0x20001
+	1c:	89028293          	addi	t0,t0,-1904 # 200008a8 <__malloc_sbrk_base>
+	20:	404282b3          	sub	t0,t0,tp
+	24:	00028b63          	beqz	t0,3a <L_loop0_done>
+
+
+Basic_block Name: 1
+In Function:      <L_loop0>
+Start address:    28
+End address:      36
+Start instruction: 
+	28:	0001a303          	lw	t1,0(gp)
+End instruction: 
+	36:	fe0299e3          	bnez	t0,28 <L_loop0>
+Length:           6
+Taken_Target address:       28
+Taken_Target instruction: 
+	28:	0001a303          	lw	t1,0(gp)
+Not_Taken_Target address:   3a
+Not_Taken_Target instruction: 
+	3a:	20001197          	auipc	gp,0x20001
+Instruction: 
+	28:	0001a303          	lw	t1,0(gp)
+	2c:	00622023          	sw	t1,0(tp) # 0 <__start>
+	30:	0191                	addi	gp,gp,4
+	32:	0211                	addi	tp,tp,4
+	34:	12f1                	addi	t0,t0,-4
+	36:	fe0299e3          	bnez	t0,28 <L_loop0>
+
+
+Basic_block Name: 2
+In Function:      <L_loop0_done>
+Start address:    3a
+End address:      50
+Start instruction: 
+	3a:	20001197          	auipc	gp,0x20001
+End instruction: 
+	50:	00020863          	beqz	tp,60 <L_loop1_done>
+Length:           7
+Taken_Target address:       60
+Taken_Target instruction: 
+	60:	00000197          	auipc	gp,0x0
+Not_Taken_Target address:   54
+Not_Taken_Target instruction: 
+	54:	0051a023          	sw	t0,0(gp)
+Instruction: 
+	3a:	20001197          	auipc	gp,0x20001
+	3e:	86e18193          	addi	gp,gp,-1938 # 200008a8 <__malloc_sbrk_base>
+	42:	20001217          	auipc	tp,0x20001
+	46:	89a20213          	addi	tp,tp,-1894 # 200008dc <__malloc_max_total_mem>
+	4a:	4281                	li	t0,0
+	4c:	40320233          	sub	tp,tp,gp
+	50:	00020863          	beqz	tp,60 <L_loop1_done>
+
+
+Basic_block Name: 3
+In Function:      <L_loop1>
+Start address:    54
+End address:      5c
+Start instruction: 
+	54:	0051a023          	sw	t0,0(gp)
+End instruction: 
+	5c:	fe021ce3          	bnez	tp,54 <L_loop1>
+Length:           4
+Taken_Target address:       54
+Taken_Target instruction: 
+	54:	0051a023          	sw	t0,0(gp)
+Not_Taken_Target address:   60
+Not_Taken_Target instruction: 
+	60:	00000197          	auipc	gp,0x0
+Instruction: 
+	54:	0051a023          	sw	t0,0(gp)
+	58:	0191                	addi	gp,gp,4
+	5a:	1271                	addi	tp,tp,-4
+	5c:	fe021ce3          	bnez	tp,54 <L_loop1>
+
+
+Basic_block Name: 4
+In Function:      <L_loop1_done>
+Start address:    60
+End address:      dc
+Start instruction: 
+	60:	00000197          	auipc	gp,0x0
+End instruction: 
+	dc:	7c519073          	csrw	mhint,gp
+Length:           36
+Taken_Target address:       
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	60:	00000197          	auipc	gp,0x0
+	64:	0e018193          	addi	gp,gp,224 # 140 <trap_handler>
+	68:	30519073          	csrw	mtvec,gp
+	6c:	00000197          	auipc	gp,0x0
+	70:	11418193          	addi	gp,gp,276 # 180 <vector_table>
+	74:	04018193          	addi	gp,gp,64
+	78:	30719073          	csrw	mtvt,gp
+	7c:	effff7b7          	lui	a5,0xeffff
+	80:	00020837          	lui	a6,0x20
+	84:	0107a023          	sw	a6,0(a5) # effff000 <__kernel_stack+0xcff3f008>
+	88:	48b1                	li	a7,12
+	8a:	0117a223          	sw	a7,4(a5)
+	8e:	00040837          	lui	a6,0x40
+	92:	48b1                	li	a7,12
+	94:	0107a423          	sw	a6,8(a5)
+	98:	0117a623          	sw	a7,12(a5)
+	9c:	00050837          	lui	a6,0x50
+	a0:	48c1                	li	a7,16
+	a2:	0107a823          	sw	a6,16(a5)
+	a6:	0117aa23          	sw	a7,20(a5)
+	aa:	400117b7          	lui	a5,0x40011
+	ae:	0ff00813          	li	a6,255
+	b2:	0107a023          	sw	a6,0(a5) # 40011000 <__kernel_stack+0x1ff51008>
+	b6:	480d                	li	a6,3
+	b8:	0107a423          	sw	a6,8(a5)
+	bc:	0047a803          	lw	a6,4(a5)
+	c0:	08800193          	li	gp,136
+	c4:	30019073          	csrw	mstatus,gp
+	c8:	6189                	lui	gp,0x2
+	ca:	3001a073          	csrs	mstatus,gp
+	ce:	6185                	lui	gp,0x1
+	d0:	03f18193          	addi	gp,gp,63 # 103f <_ftoa+0x221>
+	d4:	7c119073          	csrw	mhcr,gp
+	d8:	6191                	lui	gp,0x4
+	da:	01b1                	addi	gp,gp,12
+	dc:	7c519073          	csrw	mhint,gp
+
+
+Basic_block Name: 5
+In Function:      <__to_main>
+Start address:    e0
+End address:      e0
+Start instruction: 
+	e0:	313010ef          	jal	ra,1bf2 <main>
+End instruction: 
+	e0:	313010ef          	jal	ra,1bf2 <main>
+Length:           1
+Taken_Target address:       1bf2
+Taken_Target instruction: 
+	1bf2:	6795                	lui	a5,0x5
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	e0:	313010ef          	jal	ra,1bf2 <main>
+
+
+Basic_block Name: 6
+In Function:      <puts>
+Start address:    1860
+End address:      186c
+Start instruction: 
+	1860:	1141                	addi	sp,sp,-16
+End instruction: 
+	186c:	c519                	beqz	a0,187a <puts+0x1a>
+Length:           6
+Taken_Target address:       187a
+Taken_Target instruction: 
+	187a:	55fd                	li	a1,-1
+Not_Taken_Target address:   186e
+Not_Taken_Target instruction: 
+	186e:	55fd                	li	a1,-1
+Instruction: 
+	1860:	1141                	addi	sp,sp,-16
+	1862:	c422                	sw	s0,8(sp)
+	1864:	c606                	sw	ra,12(sp)
+	1866:	842a                	mv	s0,a0
+	1868:	00054503          	lbu	a0,0(a0)
+	186c:	c519                	beqz	a0,187a <puts+0x1a>
+
+
+Basic_block Name: 7
+In Function:      <puts>
+Start address:    186e
+End address:      1872
+Start instruction: 
+	186e:	55fd                	li	a1,-1
+End instruction: 
+	1872:	2e8d                	jal	1be4 <fputc>
+Length:           3
+Taken_Target address:       1be4
+Taken_Target instruction: 
+	1be4:	0ff57593          	andi	a1,a0,255
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	186e:	55fd                	li	a1,-1
+	1870:	0405                	addi	s0,s0,1
+	1872:	2e8d                	jal	1be4 <fputc>
+
+
+Basic_block Name: 8
+In Function:      <puts>
+Start address:    1874
+End address:      1878
+Start instruction: 
+	1874:	00044503          	lbu	a0,0(s0)
+End instruction: 
+	1878:	f97d                	bnez	a0,186e <puts+0xe>
+Length:           2
+Taken_Target address:       186e
+Taken_Target instruction: 
+	186e:	55fd                	li	a1,-1
+Not_Taken_Target address:   187a
+Not_Taken_Target instruction: 
+	187a:	55fd                	li	a1,-1
+Instruction: 
+	1874:	00044503          	lbu	a0,0(s0)
+	1878:	f97d                	bnez	a0,186e <puts+0xe>
+
+
+Basic_block Name: 9
+In Function:      <puts>
+Start address:    187a
+End address:      187e
+Start instruction: 
+	187a:	55fd                	li	a1,-1
+End instruction: 
+	187e:	269d                	jal	1be4 <fputc>
+Length:           3
+Taken_Target address:       1be4
+Taken_Target instruction: 
+	1be4:	0ff57593          	andi	a1,a0,255
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	187a:	55fd                	li	a1,-1
+	187c:	4529                	li	a0,10
+	187e:	269d                	jal	1be4 <fputc>
+
+
+Basic_block Name: 10
+In Function:      <puts>
+Start address:    1880
+End address:      1888
+Start instruction: 
+	1880:	40b2                	lw	ra,12(sp)
+End instruction: 
+	1888:	8082                	ret
+Length:           5
+Taken_Target address:       ['<main> 1c2c', '<main> 1c4e']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1880:	40b2                	lw	ra,12(sp)
+	1882:	4422                	lw	s0,8(sp)
+	1884:	4501                	li	a0,0
+	1886:	0141                	addi	sp,sp,16
+	1888:	8082                	ret
+
+
+Basic_block Name: 11
+In Function:      <ck_uart_set_parity>
+Start address:    19cc
+End address:      19d0
+Start instruction: 
+	19cc:	c54c                	sw	a1,12(a0)
+End instruction: 
+	19d0:	04f58363          	beq	a1,a5,1a16 <ck_uart_set_parity+0x4a>
+Length:           3
+Taken_Target address:       1a16
+Taken_Target instruction: 
+	1a16:	4158                	lw	a4,4(a0)
+Not_Taken_Target address:   19d4
+Not_Taken_Target instruction: 
+	19d4:	4789                	li	a5,2
+Instruction: 
+	19cc:	c54c                	sw	a1,12(a0)
+	19ce:	4785                	li	a5,1
+	19d0:	04f58363          	beq	a1,a5,1a16 <ck_uart_set_parity+0x4a>
+
+
+Basic_block Name: 12
+In Function:      <ck_uart_set_parity>
+Start address:    19d4
+End address:      19d6
+Start instruction: 
+	19d4:	4789                	li	a5,2
+End instruction: 
+	19d6:	00f58d63          	beq	a1,a5,19f0 <ck_uart_set_parity+0x24>
+Length:           2
+Taken_Target address:       19f0
+Taken_Target instruction: 
+	19f0:	4158                	lw	a4,4(a0)
+Not_Taken_Target address:   19da
+Not_Taken_Target instruction: 
+	19da:	00058363          	beqz	a1,19e0 <ck_uart_set_parity+0x14>
+Instruction: 
+	19d4:	4789                	li	a5,2
+	19d6:	00f58d63          	beq	a1,a5,19f0 <ck_uart_set_parity+0x24>
+
+
+Basic_block Name: 13
+In Function:      <ck_uart_set_parity>
+Start address:    19da
+End address:      19da
+Start instruction: 
+	19da:	00058363          	beqz	a1,19e0 <ck_uart_set_parity+0x14>
+End instruction: 
+	19da:	00058363          	beqz	a1,19e0 <ck_uart_set_parity+0x14>
+Length:           1
+Taken_Target address:       19e0
+Taken_Target instruction: 
+	19e0:	4158                	lw	a4,4(a0)
+Not_Taken_Target address:   19de
+Not_Taken_Target instruction: 
+	19de:	8082                	ret
+Instruction: 
+	19da:	00058363          	beqz	a1,19e0 <ck_uart_set_parity+0x14>
+
+
+Basic_block Name: 14
+In Function:      <ck_uart_set_parity>
+Start address:    19de
+End address:      19de
+Start instruction: 
+	19de:	8082                	ret
+End instruction: 
+	19de:	8082                	ret
+Length:           1
+Taken_Target address:       ['<ck_uart_init> 1b62']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	19de:	8082                	ret
+
+
+Basic_block Name: 15
+In Function:      <ck_uart_set_parity>
+Start address:    19e0
+End address:      19ee
+Start instruction: 
+	19e0:	4158                	lw	a4,4(a0)
+End instruction: 
+	19ee:	8082                	ret
+Length:           5
+Taken_Target address:       ['<ck_uart_init> 1b62']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	19e0:	4158                	lw	a4,4(a0)
+	19e2:	00c74783          	lbu	a5,12(a4)
+	19e6:	0f77f793          	andi	a5,a5,247
+	19ea:	00f70623          	sb	a5,12(a4)
+	19ee:	8082                	ret
+
+
+Basic_block Name: 16
+In Function:      <ck_uart_set_parity>
+Start address:    19f0
+End address:      1a14
+Start instruction: 
+	19f0:	4158                	lw	a4,4(a0)
+End instruction: 
+	1a14:	8082                	ret
+Length:           11
+Taken_Target address:       ['<ck_uart_init> 1b62']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	19f0:	4158                	lw	a4,4(a0)
+	19f2:	00c74783          	lbu	a5,12(a4)
+	19f6:	0ff7f793          	andi	a5,a5,255
+	19fa:	0087e793          	ori	a5,a5,8
+	19fe:	00f70623          	sb	a5,12(a4)
+	1a02:	4158                	lw	a4,4(a0)
+	1a04:	00c74783          	lbu	a5,12(a4)
+	1a08:	0ff7f793          	andi	a5,a5,255
+	1a0c:	0107e793          	ori	a5,a5,16
+	1a10:	00f70623          	sb	a5,12(a4)
+	1a14:	8082                	ret
+
+
+Basic_block Name: 17
+In Function:      <ck_uart_set_parity>
+Start address:    1a16
+End address:      1a36
+Start instruction: 
+	1a16:	4158                	lw	a4,4(a0)
+End instruction: 
+	1a36:	8082                	ret
+Length:           10
+Taken_Target address:       ['<ck_uart_init> 1b62']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a16:	4158                	lw	a4,4(a0)
+	1a18:	00c74783          	lbu	a5,12(a4)
+	1a1c:	0ff7f793          	andi	a5,a5,255
+	1a20:	0087e793          	ori	a5,a5,8
+	1a24:	00f70623          	sb	a5,12(a4)
+	1a28:	4158                	lw	a4,4(a0)
+	1a2a:	00c74783          	lbu	a5,12(a4)
+	1a2e:	0ef7f793          	andi	a5,a5,239
+	1a32:	00f70623          	sb	a5,12(a4)
+	1a36:	8082                	ret
+
+
+Basic_block Name: 18
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a38
+End address:      1a3c
+Start instruction: 
+	1a38:	c94c                	sw	a1,20(a0)
+End instruction: 
+	1a3c:	04f58d63          	beq	a1,a5,1a96 <ck_uart_set_wordsize+0x5e>
+Length:           3
+Taken_Target address:       1a96
+Taken_Target instruction: 
+	1a96:	4158                	lw	a4,4(a0)
+Not_Taken_Target address:   1a40
+Not_Taken_Target instruction: 
+	1a40:	02b7e563          	bltu	a5,a1,1a6a <ck_uart_set_wordsize+0x32>
+Instruction: 
+	1a38:	c94c                	sw	a1,20(a0)
+	1a3a:	4789                	li	a5,2
+	1a3c:	04f58d63          	beq	a1,a5,1a96 <ck_uart_set_wordsize+0x5e>
+
+
+Basic_block Name: 19
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a40
+End address:      1a40
+Start instruction: 
+	1a40:	02b7e563          	bltu	a5,a1,1a6a <ck_uart_set_wordsize+0x32>
+End instruction: 
+	1a40:	02b7e563          	bltu	a5,a1,1a6a <ck_uart_set_wordsize+0x32>
+Length:           1
+Taken_Target address:       1a6a
+Taken_Target instruction: 
+	1a6a:	478d                	li	a5,3
+Not_Taken_Target address:   1a44
+Not_Taken_Target instruction: 
+	1a44:	04058163          	beqz	a1,1a86 <ck_uart_set_wordsize+0x4e>
+Instruction: 
+	1a40:	02b7e563          	bltu	a5,a1,1a6a <ck_uart_set_wordsize+0x32>
+
+
+Basic_block Name: 20
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a44
+End address:      1a44
+Start instruction: 
+	1a44:	04058163          	beqz	a1,1a86 <ck_uart_set_wordsize+0x4e>
+End instruction: 
+	1a44:	04058163          	beqz	a1,1a86 <ck_uart_set_wordsize+0x4e>
+Length:           1
+Taken_Target address:       1a86
+Taken_Target instruction: 
+	1a86:	4158                	lw	a4,4(a0)
+Not_Taken_Target address:   1a48
+Not_Taken_Target instruction: 
+	1a48:	4158                	lw	a4,4(a0)
+Instruction: 
+	1a44:	04058163          	beqz	a1,1a86 <ck_uart_set_wordsize+0x4e>
+
+
+Basic_block Name: 21
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a48
+End address:      1a68
+Start instruction: 
+	1a48:	4158                	lw	a4,4(a0)
+End instruction: 
+	1a68:	8082                	ret
+Length:           10
+Taken_Target address:       ['<ck_uart_init> 1b68']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a48:	4158                	lw	a4,4(a0)
+	1a4a:	00c74783          	lbu	a5,12(a4)
+	1a4e:	0fd7f793          	andi	a5,a5,253
+	1a52:	00f70623          	sb	a5,12(a4)
+	1a56:	4158                	lw	a4,4(a0)
+	1a58:	00c74783          	lbu	a5,12(a4)
+	1a5c:	0ff7f793          	andi	a5,a5,255
+	1a60:	0017e793          	ori	a5,a5,1
+	1a64:	00f70623          	sb	a5,12(a4)
+	1a68:	8082                	ret
+
+
+Basic_block Name: 22
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a6a
+End address:      1a6c
+Start instruction: 
+	1a6a:	478d                	li	a5,3
+End instruction: 
+	1a6c:	00f59c63          	bne	a1,a5,1a84 <ck_uart_set_wordsize+0x4c>
+Length:           2
+Taken_Target address:       1a84
+Taken_Target instruction: 
+	1a84:	8082                	ret
+Not_Taken_Target address:   1a70
+Not_Taken_Target instruction: 
+	1a70:	4158                	lw	a4,4(a0)
+Instruction: 
+	1a6a:	478d                	li	a5,3
+	1a6c:	00f59c63          	bne	a1,a5,1a84 <ck_uart_set_wordsize+0x4c>
+
+
+Basic_block Name: 23
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a70
+End address:      1a82
+Start instruction: 
+	1a70:	4158                	lw	a4,4(a0)
+End instruction: 
+	1a82:	8082                	ret
+Length:           6
+Taken_Target address:       ['<ck_uart_init> 1b68']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a70:	4158                	lw	a4,4(a0)
+	1a72:	00c74783          	lbu	a5,12(a4)
+	1a76:	0ff7f793          	andi	a5,a5,255
+	1a7a:	0037e793          	ori	a5,a5,3
+	1a7e:	00f70623          	sb	a5,12(a4)
+	1a82:	8082                	ret
+
+
+Basic_block Name: 24
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a84
+End address:      1a84
+Start instruction: 
+	1a84:	8082                	ret
+End instruction: 
+	1a84:	8082                	ret
+Length:           1
+Taken_Target address:       ['<ck_uart_init> 1b68']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a84:	8082                	ret
+
+
+Basic_block Name: 25
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a86
+End address:      1a94
+Start instruction: 
+	1a86:	4158                	lw	a4,4(a0)
+End instruction: 
+	1a94:	8082                	ret
+Length:           5
+Taken_Target address:       ['<ck_uart_init> 1b68']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a86:	4158                	lw	a4,4(a0)
+	1a88:	00c74783          	lbu	a5,12(a4)
+	1a8c:	0fc7f793          	andi	a5,a5,252
+	1a90:	00f70623          	sb	a5,12(a4)
+	1a94:	8082                	ret
+
+
+Basic_block Name: 26
+In Function:      <ck_uart_set_wordsize>
+Start address:    1a96
+End address:      1ab6
+Start instruction: 
+	1a96:	4158                	lw	a4,4(a0)
+End instruction: 
+	1ab6:	8082                	ret
+Length:           10
+Taken_Target address:       ['<ck_uart_init> 1b68']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1a96:	4158                	lw	a4,4(a0)
+	1a98:	00c74783          	lbu	a5,12(a4)
+	1a9c:	0fe7f793          	andi	a5,a5,254
+	1aa0:	00f70623          	sb	a5,12(a4)
+	1aa4:	4158                	lw	a4,4(a0)
+	1aa6:	00c74783          	lbu	a5,12(a4)
+	1aaa:	0ff7f793          	andi	a5,a5,255
+	1aae:	0027e793          	ori	a5,a5,2
+	1ab2:	00f70623          	sb	a5,12(a4)
+	1ab6:	8082                	ret
+
+
+Basic_block Name: 27
+In Function:      <ck_uart_open>
+Start address:    1af0
+End address:      1af0
+Start instruction: 
+	1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+End instruction: 
+	1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+Length:           1
+Taken_Target address:       1b00
+Taken_Target instruction: 
+	1b00:	4505                	li	a0,1
+Not_Taken_Target address:   1af2
+Not_Taken_Target instruction: 
+	1af2:	400157b7          	lui	a5,0x40015
+Instruction: 
+	1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+
+
+Basic_block Name: 28
+In Function:      <ck_uart_open>
+Start address:    1af2
+End address:      1afe
+Start instruction: 
+	1af2:	400157b7          	lui	a5,0x40015
+End instruction: 
+	1afe:	8082                	ret
+Length:           5
+Taken_Target address:       ['<main> 1c1c']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1af2:	400157b7          	lui	a5,0x40015
+	1af6:	00052023          	sw	zero,0(a0)
+	1afa:	c15c                	sw	a5,4(a0)
+	1afc:	4501                	li	a0,0
+	1afe:	8082                	ret
+
+
+Basic_block Name: 29
+In Function:      <ck_uart_open>
+Start address:    1b00
+End address:      1b02
+Start instruction: 
+	1b00:	4505                	li	a0,1
+End instruction: 
+	1b02:	8082                	ret
+Length:           2
+Taken_Target address:       ['<main> 1c1c']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b00:	4505                	li	a0,1
+	1b02:	8082                	ret
+
+
+Basic_block Name: 30
+In Function:      <ck_uart_init>
+Start address:    1b04
+End address:      1b0a
+Start instruction: 
+	1b04:	4118                	lw	a4,0(a0)
+End instruction: 
+	1b0a:	0af70163          	beq	a4,a5,1bac <ck_uart_init+0xa8>
+Length:           4
+Taken_Target address:       1bac
+Taken_Target instruction: 
+	1bac:	4505                	li	a0,1
+Not_Taken_Target address:   1b0e
+Not_Taken_Target instruction: 
+	1b0e:	4194                	lw	a3,0(a1)
+Instruction: 
+	1b04:	4118                	lw	a4,0(a0)
+	1b06:	67c1                	lui	a5,0x10
+	1b08:	17fd                	addi	a5,a5,-1
+	1b0a:	0af70163          	beq	a4,a5,1bac <ck_uart_init+0xa8>
+
+
+Basic_block Name: 31
+In Function:      <ck_uart_init>
+Start address:    1b0e
+End address:      1b60
+Start instruction: 
+	1b0e:	4194                	lw	a3,0(a1)
+End instruction: 
+	1b60:	35b5                	jal	19cc <ck_uart_set_parity>
+Length:           27
+Taken_Target address:       19cc
+Taken_Target instruction: 
+	19cc:	c54c                	sw	a1,12(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b0e:	4194                	lw	a3,0(a1)
+	1b10:	05f5e7b7          	lui	a5,0x5f5e
+	1b14:	10078793          	addi	a5,a5,256 # 5f5e100 <_global_impure_ptr+0x5f58a98>
+	1b18:	02d7d7b3          	divu	a5,a5,a3
+	1b1c:	4158                	lw	a4,4(a0)
+	1b1e:	1141                	addi	sp,sp,-16
+	1b20:	c606                	sw	ra,12(sp)
+	1b22:	c422                	sw	s0,8(sp)
+	1b24:	c226                	sw	s1,4(sp)
+	1b26:	c514                	sw	a3,8(a0)
+	1b28:	00c74683          	lbu	a3,12(a4)
+	1b2c:	84ae                	mv	s1,a1
+	1b2e:	842a                	mv	s0,a0
+	1b30:	f806e693          	ori	a3,a3,-128
+	1b34:	0ff6f693          	andi	a3,a3,255
+	1b38:	00d70623          	sb	a3,12(a4)
+	1b3c:	0047d693          	srli	a3,a5,0x4
+	1b40:	0ff6f693          	andi	a3,a3,255
+	1b44:	83b1                	srli	a5,a5,0xc
+	1b46:	00d70023          	sb	a3,0(a4)
+	1b4a:	0ff7f793          	andi	a5,a5,255
+	1b4e:	00f70223          	sb	a5,4(a4)
+	1b52:	00c74783          	lbu	a5,12(a4)
+	1b56:	07f7f793          	andi	a5,a5,127
+	1b5a:	00f70623          	sb	a5,12(a4)
+	1b5e:	458c                	lw	a1,8(a1)
+	1b60:	35b5                	jal	19cc <ck_uart_set_parity>
+
+
+Basic_block Name: 32
+In Function:      <ck_uart_init>
+Start address:    1b62
+End address:      1b66
+Start instruction: 
+	1b62:	44cc                	lw	a1,12(s1)
+End instruction: 
+	1b66:	3dc9                	jal	1a38 <ck_uart_set_wordsize>
+Length:           3
+Taken_Target address:       1a38
+Taken_Target instruction: 
+	1a38:	c94c                	sw	a1,20(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b62:	44cc                	lw	a1,12(s1)
+	1b64:	8522                	mv	a0,s0
+	1b66:	3dc9                	jal	1a38 <ck_uart_set_wordsize>
+
+
+Basic_block Name: 33
+In Function:      <ck_uart_init>
+Start address:    1b68
+End address:      1b6c
+Start instruction: 
+	1b68:	40dc                	lw	a5,4(s1)
+End instruction: 
+	1b6c:	cb85                	beqz	a5,1b9c <ck_uart_init+0x98>
+Length:           3
+Taken_Target address:       1b9c
+Taken_Target instruction: 
+	1b9c:	4058                	lw	a4,4(s0)
+Not_Taken_Target address:   1b6e
+Not_Taken_Target instruction: 
+	1b6e:	4705                	li	a4,1
+Instruction: 
+	1b68:	40dc                	lw	a5,4(s1)
+	1b6a:	c81c                	sw	a5,16(s0)
+	1b6c:	cb85                	beqz	a5,1b9c <ck_uart_init+0x98>
+
+
+Basic_block Name: 34
+In Function:      <ck_uart_init>
+Start address:    1b6e
+End address:      1b70
+Start instruction: 
+	1b6e:	4705                	li	a4,1
+End instruction: 
+	1b70:	00e78c63          	beq	a5,a4,1b88 <ck_uart_init+0x84>
+Length:           2
+Taken_Target address:       1b88
+Taken_Target instruction: 
+	1b88:	4058                	lw	a4,4(s0)
+Not_Taken_Target address:   1b74
+Not_Taken_Target instruction: 
+	1b74:	4898                	lw	a4,16(s1)
+Instruction: 
+	1b6e:	4705                	li	a4,1
+	1b70:	00e78c63          	beq	a5,a4,1b88 <ck_uart_init+0x84>
+
+
+Basic_block Name: 35
+In Function:      <ck_uart_init>
+Start address:    1b74
+End address:      1b86
+Start instruction: 
+	1b74:	4898                	lw	a4,16(s1)
+End instruction: 
+	1b86:	8082                	ret
+Length:           10
+Taken_Target address:       ['<main> 1c24']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b74:	4898                	lw	a4,16(s1)
+	1b76:	48dc                	lw	a5,20(s1)
+	1b78:	40b2                	lw	ra,12(sp)
+	1b7a:	cc18                	sw	a4,24(s0)
+	1b7c:	cc5c                	sw	a5,28(s0)
+	1b7e:	4422                	lw	s0,8(sp)
+	1b80:	4492                	lw	s1,4(sp)
+	1b82:	4501                	li	a0,0
+	1b84:	0141                	addi	sp,sp,16
+	1b86:	8082                	ret
+
+
+Basic_block Name: 36
+In Function:      <ck_uart_init>
+Start address:    1b88
+End address:      1b9a
+Start instruction: 
+	1b88:	4058                	lw	a4,4(s0)
+End instruction: 
+	1b9a:	bfe9                	j	1b74 <ck_uart_init+0x70>
+Length:           6
+Taken_Target address:       1b74
+Taken_Target instruction: 
+	1b74:	4898                	lw	a4,16(s1)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b88:	4058                	lw	a4,4(s0)
+	1b8a:	00c74783          	lbu	a5,12(a4)
+	1b8e:	0ff7f793          	andi	a5,a5,255
+	1b92:	0047e793          	ori	a5,a5,4
+	1b96:	00f70623          	sb	a5,12(a4)
+	1b9a:	bfe9                	j	1b74 <ck_uart_init+0x70>
+
+
+Basic_block Name: 37
+In Function:      <ck_uart_init>
+Start address:    1b9c
+End address:      1baa
+Start instruction: 
+	1b9c:	4058                	lw	a4,4(s0)
+End instruction: 
+	1baa:	b7e9                	j	1b74 <ck_uart_init+0x70>
+Length:           5
+Taken_Target address:       1b74
+Taken_Target instruction: 
+	1b74:	4898                	lw	a4,16(s1)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1b9c:	4058                	lw	a4,4(s0)
+	1b9e:	00c74783          	lbu	a5,12(a4)
+	1ba2:	0fb7f793          	andi	a5,a5,251
+	1ba6:	00f70623          	sb	a5,12(a4)
+	1baa:	b7e9                	j	1b74 <ck_uart_init+0x70>
+
+
+Basic_block Name: 38
+In Function:      <ck_uart_init>
+Start address:    1bac
+End address:      1bae
+Start instruction: 
+	1bac:	4505                	li	a0,1
+End instruction: 
+	1bae:	8082                	ret
+Length:           2
+Taken_Target address:       ['<main> 1c24']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1bac:	4505                	li	a0,1
+	1bae:	8082                	ret
+
+
+Basic_block Name: 39
+In Function:      <ck_uart_putc>
+Start address:    1bc2
+End address:      1bc4
+Start instruction: 
+	1bc2:	4d5c                	lw	a5,28(a0)
+End instruction: 
+	1bc4:	cb99                	beqz	a5,1bda <ck_uart_putc+0x18>
+Length:           2
+Taken_Target address:       1bda
+Taken_Target instruction: 
+	1bda:	4505                	li	a0,1
+Not_Taken_Target address:   1bc6
+Not_Taken_Target instruction: 
+	1bc6:	4158                	lw	a4,4(a0)
+Instruction: 
+	1bc2:	4d5c                	lw	a5,28(a0)
+	1bc4:	cb99                	beqz	a5,1bda <ck_uart_putc+0x18>
+
+
+Basic_block Name: 40
+In Function:      <ck_uart_putc>
+Start address:    1bc6
+End address:      1bd0
+Start instruction: 
+	1bc6:	4158                	lw	a4,4(a0)
+End instruction: 
+	1bd0:	dfe5                	beqz	a5,1bc8 <ck_uart_putc+0x6>
+Length:           4
+Taken_Target address:       1bc8
+Taken_Target instruction: 
+	1bc8:	01474783          	lbu	a5,20(a4)
+Not_Taken_Target address:   1bd2
+Not_Taken_Target instruction: 
+	1bd2:	00b70023          	sb	a1,0(a4)
+Instruction: 
+	1bc6:	4158                	lw	a4,4(a0)
+	1bc8:	01474783          	lbu	a5,20(a4)
+	1bcc:	0207f793          	andi	a5,a5,32
+	1bd0:	dfe5                	beqz	a5,1bc8 <ck_uart_putc+0x6>
+
+
+Basic_block Name: 51 start_with_taken_target
+In Function:      <ck_uart_putc>
+Start address:    1bc8
+End address:      1bd0
+Start instruction: 
+	1bc8:	01474783          	lbu	a5,20(a4)
+End instruction: 
+	1bd0:	dfe5                	beqz	a5,1bc8 <ck_uart_putc+0x6>
+Length:           3
+Taken_Target address:       1bc8
+Taken_Target instruction: 
+	1bc8:	01474783          	lbu	a5,20(a4)
+Not_Taken_Target address:   1bd2
+Not_Taken_Target instruction: 
+	1bd2:	00b70023          	sb	a1,0(a4)
+Instruction: 
+	1bc8:	01474783          	lbu	a5,20(a4)
+	1bcc:	0207f793          	andi	a5,a5,32
+	1bd0:	dfe5                	beqz	a5,1bc8 <ck_uart_putc+0x6>
+
+
+Basic_block Name: 41
+In Function:      <ck_uart_putc>
+Start address:    1bd2
+End address:      1bd8
+Start instruction: 
+	1bd2:	00b70023          	sb	a1,0(a4)
+End instruction: 
+	1bd8:	8082                	ret
+Length:           3
+Taken_Target address:       ['<puts> 1874', '<puts> 1880', '<main> 1c42']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1bd2:	00b70023          	sb	a1,0(a4)
+	1bd6:	4501                	li	a0,0
+	1bd8:	8082                	ret
+
+
+Basic_block Name: 42
+In Function:      <ck_uart_putc>
+Start address:    1bda
+End address:      1bdc
+Start instruction: 
+	1bda:	4505                	li	a0,1
+End instruction: 
+	1bdc:	8082                	ret
+Length:           2
+Taken_Target address:       ['<puts> 1874', '<puts> 1880', '<main> 1c42']
+Taken_Target instruction: 
+	
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1bda:	4505                	li	a0,1
+	1bdc:	8082                	ret
+
+
+Basic_block Name: 43
+In Function:      <fputc>
+Start address:    1be4
+End address:      1bf0
+Start instruction: 
+	1be4:	0ff57593          	andi	a1,a0,255
+End instruction: 
+	1bf0:	bfc9                	j	1bc2 <ck_uart_putc>
+Length:           4
+Taken_Target address:       1bc2
+Taken_Target instruction: 
+	1bc2:	4d5c                	lw	a5,28(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1be4:	0ff57593          	andi	a1,a0,255
+	1be8:	20000537          	lui	a0,0x20000
+	1bec:	00450513          	addi	a0,a0,4 # 20000004 <uart0>
+	1bf0:	bfc9                	j	1bc2 <ck_uart_putc>
+
+
+Basic_block Name: 44
+In Function:      <main>
+Start address:    1bf2
+End address:      1c1a
+Start instruction: 
+	1bf2:	6795                	lui	a5,0x5
+End instruction: 
+	1c1a:	3dd9                	jal	1af0 <ck_uart_open>
+Length:           18
+Taken_Target address:       1af0
+Taken_Target instruction: 
+	1af0:	e981                	bnez	a1,1b00 <ck_uart_open+0x10>
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1bf2:	6795                	lui	a5,0x5
+	1bf4:	7179                	addi	sp,sp,-48
+	1bf6:	b0078793          	addi	a5,a5,-1280 # 4b00 <_malloc_r+0x50a>
+	1bfa:	d226                	sw	s1,36(sp)
+	1bfc:	c43e                	sw	a5,8(sp)
+	1bfe:	200004b7          	lui	s1,0x20000
+	1c02:	478d                	li	a5,3
+	1c04:	4581                	li	a1,0
+	1c06:	ca3e                	sw	a5,20(sp)
+	1c08:	00448513          	addi	a0,s1,4 # 20000004 <uart0>
+	1c0c:	4785                	li	a5,1
+	1c0e:	d606                	sw	ra,44(sp)
+	1c10:	ce3e                	sw	a5,28(sp)
+	1c12:	d422                	sw	s0,40(sp)
+	1c14:	d04a                	sw	s2,32(sp)
+	1c16:	c802                	sw	zero,16(sp)
+	1c18:	c602                	sw	zero,12(sp)
+	1c1a:	3dd9                	jal	1af0 <ck_uart_open>
+
+
+Basic_block Name: 45
+In Function:      <main>
+Start address:    1c1c
+End address:      1c22
+Start instruction: 
+	1c1c:	002c                	addi	a1,sp,8
+End instruction: 
+	1c22:	35cd                	jal	1b04 <ck_uart_init>
+Length:           3
+Taken_Target address:       1b04
+Taken_Target instruction: 
+	1b04:	4118                	lw	a4,0(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c1c:	002c                	addi	a1,sp,8
+	1c1e:	00448513          	addi	a0,s1,4
+	1c22:	35cd                	jal	1b04 <ck_uart_init>
+
+
+Basic_block Name: 46
+In Function:      <main>
+Start address:    1c24
+End address:      1c2a
+Start instruction: 
+	1c24:	6515                	lui	a0,0x5
+End instruction: 
+	1c2a:	391d                	jal	1860 <puts>
+Length:           3
+Taken_Target address:       1860
+Taken_Target instruction: 
+	1860:	1141                	addi	sp,sp,-16
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c24:	6515                	lui	a0,0x5
+	1c26:	43850513          	addi	a0,a0,1080 # 5438 <pow10.0+0x50>
+	1c2a:	391d                	jal	1860 <puts>
+
+
+Basic_block Name: 47
+In Function:      <main>
+Start address:    1c2c
+End address:      1c40
+Start instruction: 
+	1c2c:	04100413          	li	s0,65
+End instruction: 
+	1c40:	3749                	jal	1bc2 <ck_uart_putc>
+Length:           7
+Taken_Target address:       1bc2
+Taken_Target instruction: 
+	1bc2:	4d5c                	lw	a5,28(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c2c:	04100413          	li	s0,65
+	1c30:	04600913          	li	s2,70
+	1c34:	85a2                	mv	a1,s0
+	1c36:	0405                	addi	s0,s0,1
+	1c38:	00448513          	addi	a0,s1,4
+	1c3c:	0ff47413          	andi	s0,s0,255
+	1c40:	3749                	jal	1bc2 <ck_uart_putc>
+
+
+Basic_block Name: 52 start_with_taken_target
+In Function:      <main>
+Start address:    1c34
+End address:      1c40
+Start instruction: 
+	1c34:	85a2                	mv	a1,s0
+End instruction: 
+	1c40:	3749                	jal	1bc2 <ck_uart_putc>
+Length:           5
+Taken_Target address:       1bc2
+Taken_Target instruction: 
+	1bc2:	4d5c                	lw	a5,28(a0)
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c34:	85a2                	mv	a1,s0
+	1c36:	0405                	addi	s0,s0,1
+	1c38:	00448513          	addi	a0,s1,4
+	1c3c:	0ff47413          	andi	s0,s0,255
+	1c40:	3749                	jal	1bc2 <ck_uart_putc>
+
+
+Basic_block Name: 48
+In Function:      <main>
+Start address:    1c42
+End address:      1c42
+Start instruction: 
+	1c42:	ff2419e3          	bne	s0,s2,1c34 <main+0x42>
+End instruction: 
+	1c42:	ff2419e3          	bne	s0,s2,1c34 <main+0x42>
+Length:           1
+Taken_Target address:       1c34
+Taken_Target instruction: 
+	1c34:	85a2                	mv	a1,s0
+Not_Taken_Target address:   1c46
+Not_Taken_Target instruction: 
+	1c46:	6515                	lui	a0,0x5
+Instruction: 
+	1c42:	ff2419e3          	bne	s0,s2,1c34 <main+0x42>
+
+
+Basic_block Name: 49
+In Function:      <main>
+Start address:    1c46
+End address:      1c4c
+Start instruction: 
+	1c46:	6515                	lui	a0,0x5
+End instruction: 
+	1c4c:	3911                	jal	1860 <puts>
+Length:           3
+Taken_Target address:       1860
+Taken_Target instruction: 
+	1860:	1141                	addi	sp,sp,-16
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c46:	6515                	lui	a0,0x5
+	1c48:	44c50513          	addi	a0,a0,1100 # 544c <pow10.0+0x64>
+	1c4c:	3911                	jal	1860 <puts>
+
+
+Basic_block Name: 50
+In Function:      <main>
+Start address:    1c4e
+End address:      1c4e
+Start instruction: 
+	1c4e:	a001                	j	1c4e <main+0x5c>
+End instruction: 
+	1c4e:	a001                	j	1c4e <main+0x5c>
+Length:           1
+Taken_Target address:       1c4e
+Taken_Target instruction: 
+	1c4e:	a001                	j	1c4e <main+0x5c>
+Not_Taken_Target address:   
+Not_Taken_Target instruction: 
+	
+Instruction: 
+	1c4e:	a001                	j	1c4e <main+0x5c>
+
+

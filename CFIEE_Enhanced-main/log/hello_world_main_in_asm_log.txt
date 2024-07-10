@@ -1,0 +1,537 @@
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x00000000:  200c0117          auipc           sp,537657344    # 0x200c0000
+0x00000004:  ff810113          addi            sp,sp,-8
+0x00000008:  00005197          auipc           gp,20480        # 0x5008
+0x0000000c:  62018193          addi            gp,gp,1568
+0x00000010:  20000217          auipc           tp,536870912    # 0x20000010
+0x00000014:  ff020213          addi            tp,tp,-16
+0x00000018:  20001297          auipc           t0,536875008    # 0x20001018
+0x0000001c:  89028293          addi            t0,t0,-1904
+0x00000020:  404282b3          sub             t0,t0,tp
+0x00000024:  00028b63          beqz            t0,22           # 0x3a
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x00000028:  0001a303          lw              t1,0(gp)
+0x0000002c:  00622023          sw              t1,0(tp)
+0x00000030:  0191              addi            gp,gp,4
+0x00000032:  0211              addi            tp,tp,4
+0x00000034:  12f1              addi            t0,t0,-4
+0x00000036:  fe0299e3          bnez            t0,-14          # 0x28
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x0000003a:  20001197          auipc           gp,536875008    # 0x2000103a
+0x0000003e:  86e18193          addi            gp,gp,-1938
+0x00000042:  20001217          auipc           tp,536875008    # 0x20001042
+0x00000046:  89a20213          addi            tp,tp,-1894
+0x0000004a:  4281              mv              t0,zero
+0x0000004c:  40320233          sub             tp,tp,gp
+0x00000050:  00020863          beqz            tp,16           # 0x60
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x00000054:  0051a023          sw              t0,0(gp)
+0x00000058:  0191              addi            gp,gp,4
+0x0000005a:  1271              addi            tp,tp,-4
+0x0000005c:  fe021ce3          bnez            tp,-8           # 0x54
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x00000060:  00000197          auipc           gp,0            # 0x60
+0x00000064:  0e018193          addi            gp,gp,224
+0x00000068:  30519073          csrrw           zero,mtvec,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x0000006c:  00000197          auipc           gp,0            # 0x6c
+0x00000070:  11418193          addi            gp,gp,276
+0x00000074:  04018193          addi            gp,gp,64
+0x00000078:  30719073          csrrw           zero,0x307,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x0000007c:  effff7b7          lui             a5,-268439552
+0x00000080:  00020837          lui             a6,131072
+0x00000084:  0107a023          sw              a6,0(a5)
+0x00000088:  48b1              addi            a7,zero,12
+0x0000008a:  0117a223          sw              a7,4(a5)
+0x0000008e:  00040837          lui             a6,262144
+0x00000092:  48b1              addi            a7,zero,12
+0x00000094:  0107a423          sw              a6,8(a5)
+0x00000098:  0117a623          sw              a7,12(a5)
+0x0000009c:  00050837          lui             a6,327680
+0x000000a0:  48c1              addi            a7,zero,16
+0x000000a2:  0107a823          sw              a6,16(a5)
+0x000000a6:  0117aa23          sw              a7,20(a5)
+0x000000aa:  400117b7          lui             a5,1073811456
+0x000000ae:  0ff00813          addi            a6,zero,255
+0x000000b2:  0107a023          sw              a6,0(a5)
+0x000000b6:  480d              addi            a6,zero,3
+0x000000b8:  0107a423          sw              a6,8(a5)
+0x000000bc:  0047a803          lw              a6,4(a5)
+0x000000c0:  08800193          addi            gp,zero,136
+0x000000c4:  30019073          csrrw           zero,mstatus,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x000000c8:  6189              lui             gp,8192
+0x000000ca:  3001a073          csrrs           zero,mstatus,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x000000ce:  6185              lui             gp,4096
+0x000000d0:  03f18193          addi            gp,gp,63
+0x000000d4:  7c119073          csrrw           zero,0x7c1,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x000000d8:  6191              lui             gp,16384
+0x000000da:  01b1              addi            gp,gp,12
+0x000000dc:  7c519073          csrrw           zero,0x7c5,gp
+
+----------------
+IN: 
+Priv: 3; Virt: 0
+0x000000e0:  52a000ef          jal             ra,1322         # 0x60a
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x0000060a:  6795              lui             a5,20480
+0x0000060c:  7179              addi            sp,sp,-48
+0x0000060e:  b0078793          addi            a5,a5,-1280
+0x00000612:  d422              sw              s0,40(sp)
+0x00000614:  c43e              sw              a5,8(sp)
+0x00000616:  20000437          lui             s0,536870912
+0x0000061a:  478d              addi            a5,zero,3
+0x0000061c:  4581              mv              a1,zero
+0x0000061e:  ca3e              sw              a5,20(sp)
+0x00000620:  00440513          addi            a0,s0,4
+0x00000624:  4785              addi            a5,zero,1
+0x00000626:  d606              sw              ra,44(sp)
+0x00000628:  ce3e              sw              a5,28(sp)
+0x0000062a:  c802              sw              zero,16(sp)
+0x0000062c:  c602              sw              zero,12(sp)
+0x0000062e:  572010ef          jal             ra,5490         # 0x1ba0
+
+----------------
+IN: ck_uart_open
+Priv: 3; Virt: 0
+0x00001ba0:  e981              bnez            a1,16           # 0x1bb0
+
+----------------
+IN: ck_uart_open
+Priv: 3; Virt: 0
+0x00001ba2:  400157b7          lui             a5,1073827840
+0x00001ba6:  00052023          sw              zero,0(a0)
+0x00001baa:  c15c              sw              a5,4(a0)
+0x00001bac:  4501              mv              a0,zero
+0x00001bae:  8082              ret             
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x00000632:  002c              addi            a1,sp,8
+0x00000634:  00440513          addi            a0,s0,4
+0x00000638:  57c010ef          jal             ra,5500         # 0x1bb4
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001bb4:  4118              lw              a4,0(a0)
+0x00001bb6:  67c1              lui             a5,65536
+0x00001bb8:  17fd              addi            a5,a5,-1
+0x00001bba:  0af70163          beq             a4,a5,162       # 0x1c5c
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001bbe:  4194              lw              a3,0(a1)
+0x00001bc0:  05f5e7b7          lui             a5,99999744
+0x00001bc4:  10078793          addi            a5,a5,256
+0x00001bc8:  02d7d7b3          divu            a5,a5,a3
+0x00001bcc:  4158              lw              a4,4(a0)
+0x00001bce:  1141              addi            sp,sp,-16
+0x00001bd0:  c606              sw              ra,12(sp)
+0x00001bd2:  c422              sw              s0,8(sp)
+0x00001bd4:  c226              sw              s1,4(sp)
+0x00001bd6:  c514              sw              a3,8(a0)
+0x00001bd8:  00c74683          lbu             a3,12(a4)
+0x00001bdc:  84ae              mv              s1,a1
+0x00001bde:  842a              mv              s0,a0
+0x00001be0:  f806e693          ori             a3,a3,-128
+0x00001be4:  0ff6f693          andi            a3,a3,255
+0x00001be8:  00d70623          sb              a3,12(a4)
+0x00001bec:  0047d693          srli            a3,a5,4
+0x00001bf0:  0ff6f693          andi            a3,a3,255
+0x00001bf4:  83b1              srli            a5,a5,12
+0x00001bf6:  00d70023          sb              a3,0(a4)
+0x00001bfa:  0ff7f793          andi            a5,a5,255
+0x00001bfe:  00f70223          sb              a5,4(a4)
+0x00001c02:  00c74783          lbu             a5,12(a4)
+0x00001c06:  07f7f793          andi            a5,a5,127
+0x00001c0a:  00f70623          sb              a5,12(a4)
+0x00001c0e:  458c              lw              a1,8(a1)
+0x00001c10:  35b5              jal             ra,-404         # 0x1a7c
+
+----------------
+IN: ck_uart_set_parity
+Priv: 3; Virt: 0
+0x00001a7c:  c54c              sw              a1,12(a0)
+0x00001a7e:  4785              addi            a5,zero,1
+0x00001a80:  04f58363          beq             a1,a5,70        # 0x1ac6
+
+----------------
+IN: ck_uart_set_parity
+Priv: 3; Virt: 0
+0x00001a84:  4789              addi            a5,zero,2
+0x00001a86:  00f58d63          beq             a1,a5,26        # 0x1aa0
+
+----------------
+IN: ck_uart_set_parity
+Priv: 3; Virt: 0
+0x00001a8a:  00058363          beqz            a1,6            # 0x1a90
+
+----------------
+IN: ck_uart_set_parity
+Priv: 3; Virt: 0
+0x00001a90:  4158              lw              a4,4(a0)
+0x00001a92:  00c74783          lbu             a5,12(a4)
+0x00001a96:  0f77f793          andi            a5,a5,247
+0x00001a9a:  00f70623          sb              a5,12(a4)
+0x00001a9e:  8082              ret             
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001c12:  44cc              lw              a1,12(s1)
+0x00001c14:  8522              mv              a0,s0
+0x00001c16:  3dc9              jal             ra,-302         # 0x1ae8
+
+----------------
+IN: ck_uart_set_wordsize
+Priv: 3; Virt: 0
+0x00001ae8:  c94c              sw              a1,20(a0)
+0x00001aea:  4789              addi            a5,zero,2
+0x00001aec:  04f58d63          beq             a1,a5,90        # 0x1b46
+
+----------------
+IN: ck_uart_set_wordsize
+Priv: 3; Virt: 0
+0x00001af0:  02b7e563          bgtu            a1,a5,42        # 0x1b1a
+
+----------------
+IN: ck_uart_set_wordsize
+Priv: 3; Virt: 0
+0x00001b1a:  478d              addi            a5,zero,3
+0x00001b1c:  00f59c63          bne             a1,a5,24        # 0x1b34
+
+----------------
+IN: ck_uart_set_wordsize
+Priv: 3; Virt: 0
+0x00001b20:  4158              lw              a4,4(a0)
+0x00001b22:  00c74783          lbu             a5,12(a4)
+0x00001b26:  0ff7f793          andi            a5,a5,255
+0x00001b2a:  0037e793          ori             a5,a5,3
+0x00001b2e:  00f70623          sb              a5,12(a4)
+0x00001b32:  8082              ret             
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001c18:  40dc              lw              a5,4(s1)
+0x00001c1a:  c81c              sw              a5,16(s0)
+0x00001c1c:  cb85              beqz            a5,48           # 0x1c4c
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001c4c:  4058              lw              a4,4(s0)
+0x00001c4e:  00c74783          lbu             a5,12(a4)
+0x00001c52:  0fb7f793          andi            a5,a5,251
+0x00001c56:  00f70623          sb              a5,12(a4)
+0x00001c5a:  b7e9              j               -54             # 0x1c24
+
+----------------
+IN: ck_uart_init
+Priv: 3; Virt: 0
+0x00001c24:  4898              lw              a4,16(s1)
+0x00001c26:  48dc              lw              a5,20(s1)
+0x00001c28:  40b2              lw              ra,12(sp)
+0x00001c2a:  cc18              sw              a4,24(s0)
+0x00001c2c:  cc5c              sw              a5,28(s0)
+0x00001c2e:  4422              lw              s0,8(sp)
+0x00001c30:  4492              lw              s1,4(sp)
+0x00001c32:  4501              mv              a0,zero
+0x00001c34:  0141              addi            sp,sp,16
+0x00001c36:  8082              ret             
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x0000063c:  6515              lui             a0,20480
+0x0000063e:  24050513          addi            a0,a0,576
+0x00000642:  2c6010ef          jal             ra,4806         # 0x1908
+
+----------------
+IN: puts
+Priv: 3; Virt: 0
+0x00001908:  1141              addi            sp,sp,-16
+0x0000190a:  c422              sw              s0,8(sp)
+0x0000190c:  c606              sw              ra,12(sp)
+0x0000190e:  842a              mv              s0,a0
+0x00001910:  00054503          lbu             a0,0(a0)
+0x00001914:  c901              beqz            a0,16           # 0x1924
+
+----------------
+IN: puts
+Priv: 3; Virt: 0
+0x00001916:  55fd              addi            a1,zero,-1
+0x00001918:  0405              addi            s0,s0,1
+0x0000191a:  c9ffe0ef          jal             ra,-4962        # 0x5b8
+
+----------------
+IN: fputc
+Priv: 3; Virt: 0
+0x000005b8:  0ff57593          andi            a1,a0,255
+0x000005bc:  20000537          lui             a0,536870912
+0x000005c0:  00450513          addi            a0,a0,4
+0x000005c4:  6ae0106f          j               5806            # 0x1c72
+
+----------------
+IN: ck_uart_putc
+Priv: 3; Virt: 0
+0x00001c72:  4d5c              lw              a5,28(a0)
+0x00001c74:  cb99              beqz            a5,22           # 0x1c8a
+
+----------------
+IN: ck_uart_putc
+Priv: 3; Virt: 0
+0x00001c76:  4158              lw              a4,4(a0)
+0x00001c78:  01474783          lbu             a5,20(a4)
+0x00001c7c:  0207f793          andi            a5,a5,32
+0x00001c80:  dfe5              beqz            a5,-8           # 0x1c78
+
+----------------
+IN: ck_uart_putc
+Priv: 3; Virt: 0
+0x00001c82:  00b70023          sb              a1,0(a4)
+0x00001c86:  4501              mv              a0,zero
+0x00001c88:  8082              ret             
+
+----------------
+IN: puts
+Priv: 3; Virt: 0
+0x0000191e:  00044503          lbu             a0,0(s0)
+0x00001922:  f975              bnez            a0,-12          # 0x1916
+
+----------------
+IN: puts
+Priv: 3; Virt: 0
+0x00001924:  55fd              addi            a1,zero,-1
+0x00001926:  4529              addi            a0,zero,10
+0x00001928:  c91fe0ef          jal             ra,-4976        # 0x5b8
+
+----------------
+IN: puts
+Priv: 3; Virt: 0
+0x0000192c:  40b2              lw              ra,12(sp)
+0x0000192e:  4422              lw              s0,8(sp)
+0x00001930:  4501              mv              a0,zero
+0x00001932:  0141              addi            sp,sp,16
+0x00001934:  8082              ret             
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x00000646:  3749              jal             ra,-126         # 0x5c8
+
+----------------
+IN: func1
+Priv: 3; Virt: 0
+0x000005c8:  6515              lui             a0,20480
+0x000005ca:  23050513          addi            a0,a0,560
+0x000005ce:  33a0106f          j               4922            # 0x1908
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x00000648:  6515              lui             a0,20480
+0x0000064a:  25050513          addi            a0,a0,592
+0x0000064e:  2ba010ef          jal             ra,4794         # 0x1908
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x00000652:  3f9d              jal             ra,-138         # 0x5c8
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x00000654:  6515              lui             a0,20480
+0x00000656:  26050513          addi            a0,a0,608
+0x0000065a:  2f8010ef          jal             ra,4856         # 0x1952
+
+----------------
+IN: printf
+Priv: 3; Virt: 0
+0x00001952:  7139              addi            sp,sp,-64
+0x00001954:  02410313          addi            t1,sp,36
+0x00001958:  d636              sw              a3,44(sp)
+0x0000195a:  86aa              mv              a3,a0
+0x0000195c:  6505              lui             a0,4096
+0x0000195e:  d22e              sw              a1,36(sp)
+0x00001960:  d432              sw              a2,40(sp)
+0x00001962:  d83a              sw              a4,48(sp)
+0x00001964:  002c              addi            a1,sp,8
+0x00001966:  871a              mv              a4,t1
+0x00001968:  567d              addi            a2,zero,-1
+0x0000196a:  2b450513          addi            a0,a0,692
+0x0000196e:  ce06              sw              ra,28(sp)
+0x00001970:  da3e              sw              a5,52(sp)
+0x00001972:  dc42              sw              a6,56(sp)
+0x00001974:  de46              sw              a7,60(sp)
+0x00001976:  c61a              sw              t1,12(sp)
+0x00001978:  3a81              jal             ra,-1712        # 0x12c8
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000012c8:  7159              addi            sp,sp,-112
+0x000012ca:  d4a2              sw              s0,104(sp)
+0x000012cc:  d2a6              sw              s1,100(sp)
+0x000012ce:  d0ca              sw              s2,96(sp)
+0x000012d0:  cece              sw              s3,92(sp)
+0x000012d2:  c6de              sw              s7,76(sp)
+0x000012d4:  d686              sw              ra,108(sp)
+0x000012d6:  ccd2              sw              s4,88(sp)
+0x000012d8:  cad6              sw              s5,84(sp)
+0x000012da:  c8da              sw              s6,80(sp)
+0x000012dc:  c4e2              sw              s8,72(sp)
+0x000012de:  c2e6              sw              s9,68(sp)
+0x000012e0:  c0ea              sw              s10,64(sp)
+0x000012e2:  de6e              sw              s11,60(sp)
+0x000012e4:  892e              mv              s2,a1
+0x000012e6:  84b2              mv              s1,a2
+0x000012e8:  8bb6              mv              s7,a3
+0x000012ea:  843a              mv              s0,a4
+0x000012ec:  89aa              mv              s3,a0
+0x000012ee:  38058e63          beqz            a1,924          # 0x168a
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000012f2:  000bc503          lbu             a0,0(s7)
+0x000012f6:  4d81              mv              s11,zero
+0x000012f8:  3a050063          beqz            a0,928          # 0x1698
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000012fc:  6795              lui             a5,20480
+0x000012fe:  31078793          addi            a5,a5,784
+0x00001302:  6b15              lui             s6,20480
+0x00001304:  6a15              lui             s4,20480
+0x00001306:  d23e              sw              a5,36(sp)
+0x00001308:  2c4b0793          addi            a5,s6,708
+0x0000130c:  02500a93          addi            s5,zero,37
+0x00001310:  280a0a13          addi            s4,s4,640
+0x00001314:  d03e              sw              a5,32(sp)
+0x00001316:  a809              j               18              # 0x1328
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x00001328:  0b85              addi            s7,s7,1
+0x0000132a:  ff5517e3          bne             a0,s5,-18       # 0x1318
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x00001318:  866e              mv              a2,s11
+0x0000131a:  86a6              mv              a3,s1
+0x0000131c:  85ca              mv              a1,s2
+0x0000131e:  0d85              addi            s11,s11,1
+0x00001320:  9982              jalr            ra,s3,0
+
+----------------
+IN: _out_char
+Priv: 3; Virt: 0
+0x000012b4:  e111              bnez            a0,4            # 0x12b8
+
+----------------
+IN: _out_char
+Priv: 3; Virt: 0
+0x000012b8:  55fd              addi            a1,zero,-1
+0x000012ba:  afeff06f          j               -3330           # 0x5b8
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x00001322:  000bc503          lbu             a0,0(s7)
+0x00001326:  c955              beqz            a0,180          # 0x13da
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000013da:  846e              mv              s0,s11
+0x000013dc:  009de463          bgtu            s1,s11,8        # 0x13e4
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000013e4:  86a6              mv              a3,s1
+0x000013e6:  866e              mv              a2,s11
+0x000013e8:  85ca              mv              a1,s2
+0x000013ea:  4501              mv              a0,zero
+0x000013ec:  9982              jalr            ra,s3,0
+
+----------------
+IN: _out_char
+Priv: 3; Virt: 0
+0x000012b6:  8082              ret             
+
+----------------
+IN: _vsnprintf
+Priv: 3; Virt: 0
+0x000013ee:  50b6              lw              ra,108(sp)
+0x000013f0:  8522              mv              a0,s0
+0x000013f2:  5426              lw              s0,104(sp)
+0x000013f4:  5496              lw              s1,100(sp)
+0x000013f6:  5906              lw              s2,96(sp)
+0x000013f8:  49f6              lw              s3,92(sp)
+0x000013fa:  4a66              lw              s4,88(sp)
+0x000013fc:  4ad6              lw              s5,84(sp)
+0x000013fe:  4b46              lw              s6,80(sp)
+0x00001400:  4bb6              lw              s7,76(sp)
+0x00001402:  4c26              lw              s8,72(sp)
+0x00001404:  4c96              lw              s9,68(sp)
+0x00001406:  4d06              lw              s10,64(sp)
+0x00001408:  5df2              lw              s11,60(sp)
+0x0000140a:  6165              addi            sp,sp,112
+0x0000140c:  8082              ret             
+
+----------------
+IN: printf
+Priv: 3; Virt: 0
+0x0000197a:  40f2              lw              ra,28(sp)
+0x0000197c:  6121              addi            sp,sp,64
+0x0000197e:  8082              ret             
+
+----------------
+IN: main
+Priv: 3; Virt: 0
+0x0000065e:  a001              j               0               # 0x65e
+
